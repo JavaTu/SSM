@@ -28,7 +28,6 @@ public class LoginController {
 		JSONObject returnVal = new JSONObject();
 		
 		if(count == 1){
-			//�û���Ϣ����session��
 			HttpSession session = request.getSession();
 			session.setAttribute("user", param);
 			returnVal.put("success", true);
