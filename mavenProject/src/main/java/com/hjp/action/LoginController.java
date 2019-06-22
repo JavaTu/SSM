@@ -1,17 +1,15 @@
 package com.hjp.action;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.fastjson.JSONObject;
+import com.hjp.entity.UserEntity;
+import com.hjp.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
-import com.hjp.entity.UserEntity;
-import com.hjp.service.LoginService;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
@@ -28,7 +26,6 @@ public class LoginController {
 		JSONObject returnVal = new JSONObject();
 		
 		if(count == 1){
-			//�û���Ϣ����session��
 			HttpSession session = request.getSession();
 			session.setAttribute("user", param);
 			returnVal.put("success", true);

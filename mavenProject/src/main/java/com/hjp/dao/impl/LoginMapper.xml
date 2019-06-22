@@ -3,7 +3,7 @@
 <mapper namespace="com.hjp.dao.LoginMapper">
 	
 	<select id="checkUserInfo" parameterType="com.hjp.entity.UserEntity" resultType="java.lang.Integer">
-		select count(*) from user where username = #{param.userName} and password = #{param.password}
+		select count(1) from user where mobile = #{param.mobile} and password = #{param.password}
 	</select>
 	
 </mapper>
