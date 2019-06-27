@@ -1,13 +1,18 @@
 package com.hjp.service;
 
-import com.hjp.entity.UserEntity;
+import com.hjp.dao.LoginDao;
+import com.hjp.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface LoginService {
+@Service
+public class LoginService {
 
-	/**
-	 * 查询用户名密码是否正确
-	 * @param : 
-	 * @return:
-	 */
-	public int checkUserInfo(UserEntity param);
+	@Autowired
+	private LoginDao loginMapper;
+	
+	public int checkUserInfo(User param) {
+		return loginMapper.checkUserInfo(param);
+	}
+
 }

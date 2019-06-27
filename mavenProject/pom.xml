@@ -164,8 +164,6 @@
 		<artifactId>commons-codec</artifactId>
 		<version>1.9</version>
 	</dependency>
-
-	
   </dependencies>
   
   <build>
@@ -176,8 +174,14 @@
 				  <include>**/*.xml</include>
 			  </includes>
 		  </resource>
+		  <!-- 读取资源文件 -->
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*</include>
+			  </includes>
+		  </resource>
 	  </resources>
-
 	  <plugins>
   		<plugin>
            <groupId>org.apache.maven.plugins</groupId>
@@ -192,4 +196,5 @@
   	</plugins>
     <finalName>mavenProject</finalName>
   </build>
+
 </project>

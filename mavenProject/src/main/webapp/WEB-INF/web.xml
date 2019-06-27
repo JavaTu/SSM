@@ -36,13 +36,11 @@
 	
 	<!-- Spring和mybatis的配置文件 -->
 	<context-param>
-		
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:spring-mybatis.xml;
+			classpath:spring-mybatis.xml
 			classpath:spring-core.xml
 		</param-value>
-		
 	</context-param>
 	
 	<!-- Spring MVC servlet -->

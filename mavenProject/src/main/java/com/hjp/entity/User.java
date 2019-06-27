@@ -1,6 +1,6 @@
 package com.hjp.entity;
 
-public class UserEntity {
+public class User {
 
 	private String userName;
 	
