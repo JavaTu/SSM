@@ -9,21 +9,33 @@ import java.util.concurrent.*;
  * 守护线程：独立于控制终端，周期性的执行某种任务或等待处理某些发生的事件，例如Java的垃圾回收线程，创建一个守护线程，也叫后台线程，只要设置thread.setDeamon(true)
  * 创建线程的几种方法，最常用的？
  * 线程的几种状态？
- * wait与sleep:
+ * wait与sleep:https://blog.csdn.net/kangkanglou/article/details/82221301
  *
  * @author huangjp 2019/9/20 3:40 PM
  **/
 public class Test {
 
     public static void main(String[] args) {
-        Thread thread1 = new MyThread();
+        /*Thread thread1 = new MyThread();
         thread1.start();
+
+        try {
+            Thread.sleep(1000);
+            synchronized (thread1){
+                ((MyThread) thread1).setI(2);
+                thread1.run();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
         MyRunnable runnable = new MyRunnable();
         Thread thread2 = new Thread(runnable);
         thread2.start();
 
-        Callable<MyCallable> callable = new MyCallable();
+        
+
+        /*Callable<MyCallable> callable = new MyCallable();
         FutureTask<MyCallable> futureTask = new FutureTask<>(callable);
         futureTask.run();
         try {
@@ -43,24 +55,27 @@ public class Test {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // InterruptedException 中断异常：https://www.jianshu.com/p/a8abe097d4ed
-        try {
+        /*try {
             synchronized (thread1){ //不使用synchronized会报IllegalMonitorStateException：https://blog.csdn.net/qq_39536158/article/details/86536943
                 System.out.println("wait3s");
+                long start = System.currentTimeMillis();
                 thread1.wait(3000);
+                long end = System.currentTimeMillis();
+                System.out.println("wait了"+(end-start)+"ms");   //唤醒wait线程的三个办法：等到超时，notify(),notifyAll()
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        try {
+        /*try {
             System.out.println("sleep1s");
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
