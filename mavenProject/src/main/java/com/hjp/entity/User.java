@@ -1,10 +1,20 @@
 package com.hjp.entity;
 
-public class UserEntity {
+public class User {
 
 	private String userName;
 	
 	private String password;
+
+	private String mobile;
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
 	public String getUserName() {
 		return userName;

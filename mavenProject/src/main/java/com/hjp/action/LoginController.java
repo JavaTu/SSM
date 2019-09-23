@@ -1,17 +1,15 @@
 package com.hjp.action;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.fastjson.JSONObject;
+import com.hjp.entity.User;
+import com.hjp.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
-import com.hjp.entity.UserEntity;
-import com.hjp.service.LoginService;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
@@ -22,7 +20,7 @@ public class LoginController {
 	
 	@RequestMapping("/checkInfo")
 	@ResponseBody
-	public String checkInfo(UserEntity param,HttpServletRequest request){
+	public String checkInfo(User param, HttpServletRequest request){
 		
 		int count = loginService.checkUserInfo(param);
 		JSONObject returnVal = new JSONObject();

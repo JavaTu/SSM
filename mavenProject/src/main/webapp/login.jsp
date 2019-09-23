@@ -31,8 +31,8 @@
 <form action="login/goSuccess.do">
 	<div style="margin-left: 1000px;margin-top: 200px;background-color: antiquewhite;width: 300px;height: 200px">
 		<div class="div">
-			<span>用户名：</span>
-			<input type="text" id="userName" name="userName"/>
+			<span>手机号：</span>
+			<input type="text" id="mobile" name="mobile"/>
 			<br>
 			<br>
 			<span>密码：</span>&nbsp;
@@ -46,18 +46,18 @@
 	
 <script type="text/javascript">
 function login(){
-	var username = $("#userName").val();
+	var mobile = $("#mobile").val();
 	var password = $("#password").val();
-	
-	if(username == ""){
-		alert("请输入用户名！");
+
+	if(mobile == ""){
+		alert("请输入手机号！");
 	}
 	
 	if(password == ""){
 		alert("请输入密码！");
 	}
 	
-	$.post("login/checkInfo.do",{"userName":username,"password":password},function(result){
+	$.post("login/checkInfo.do",{"mobile":mobile,"password":password},function(result){
 		result = eval ("("+result+")");
 		if(result.success == false){
 			alert("用户名或密码错误！");
